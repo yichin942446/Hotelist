@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/checkInOptionFragment2">
+    <fragment
+        android:id="@+id/stayDetailFragment2"
+        android:name="com.example.mobileapplication.StayDetailFragment"
+        android:label="Stay detail"
+        tools:layout="@layout/fragment_stay_detail">
+        <action
+            android:id="@+id/action_stayDetailFragment2_to_roomDetailFragment"
+            app:destination="@id/roomDetailFragment" />
+        <action
+            android:id="@+id/action_stayDetailFragment2_to_checkInOptionFragment2"
+            app:destination="@id/checkInOptionFragment2"
+            app:popUpTo="@id/checkInOptionFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomDetailFragment"
+        android:name="com.example.mobileapplication.RoomDetailFragment"
+        android:label="Room detail"
+        tools:layout="@layout/fragment_room_detail">
+        <argument
+            android:name="checkInKey"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_roomDetailFragment_to_guestDetailFragment"
+            app:destination="@id/guestDetailFragment" />
+        <action
+            android:id="@+id/action_roomDetailFragment_to_checkInOptionFragment2"
+            app:destination="@id/checkInOptionFragment2"
+            app:popUpTo="@id/checkInOptionFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/guestDetailFragment"
+        android:name="com.example.mobileapplication.GuestDetailFragment"
+        android:label="Guest detail"
+        tools:layout="@layout/fragment_guest_detail">
+        <argument
+            android:name="checkInKey"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_guestDetailFragment_to_checkInListFragment"
+            app:destination="@id/checkInListFragment" />
+        <action
+            android:id="@+id/action_guestDetailFragment_to_checkInOptionFragment2"
+            app:destination="@id/checkInOptionFragment2"
+            app:popUpTo="@id/checkInOptionFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkInOptionFragment2"
+        android:name="com.example.mobileapplication.CheckInOptionFragment"
+        android:label="Select Option"
+        tools:layout="@layout/fragment_check_in_option">
+        <action
+            android:id="@+id/action_checkInOptionFragment2_to_stayDetailFragment2"
+            app:destination="@id/stayDetailFragment2" />
+        <action
+            android:id="@+id/action_checkInOptionFragment2_to_checkInListFragment"
+            app:destination="@id/checkInListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkInListFragment"
+        android:name="com.example.mobileapplication.CheckInListFragment"
+        android:label="Check In List">
+        <argument
+            android:name="checkInKey"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_checkInListFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_checkInListFragment_to_checkInOptionFragment2"
+            app:destination="@id/checkInOptionFragment2"
+            app:popUpTo="@id/checkInOptionFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.mobileapplication.UpdateFragment"
+        android:label="Update Check-in Details">
+        <argument
+            android:name="currentCheckIn"
+            app:argType="com.example.mobileapplication.database.CheckIn" />
+        <action
+            android:id="@+id/action_updateFragment_to_updateFragment2"
+            app:destination="@id/updateFragment2" />
+        <action
+            android:id="@+id/action_updateFragment_to_checkInListFragment"
+            app:destination="@id/checkInListFragment"
+            app:popUpTo="@id/checkInOptionFragment2"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_updateFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+     <fragment
+        android:id="@+id/updateFragment2"
+        android:name="com.example.mobileapplication.UpdateFragment2"
+        android:label="Update Check-in Details"
+        tools:layout="@layout/fragment_update2">
+        <action
+            android:id="@+id/action_updateFragment2_to_checkInListFragment"
+            app:destination="@id/checkInListFragment" />
+        <argument
+            android:name="currentCheckIn"
+            app:argType="com.example.mobileapplication.database.CheckIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.mobileapplication.PaymentFragment"
+        android:label="Check Out"
+        tools:layout="@layout/fragment_payment" >
+        <argument
+            android:name="currentCheckIn"
+            app:argType="com.example.mobileapplication.database.CheckIn" />
+        <action
+            android:id="@+id/action_paymentFragment_to_checkInListFragment"
+            app:destination="@id/checkInListFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_checkInListFragment2"
+            app:destination="@id/checkInListFragment" />
+    </fragment>
+</navigation>

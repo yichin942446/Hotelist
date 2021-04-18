@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mgt_room_nav_graph"
+    app:startDestination="@id/addRoomFragment">
+
+    <fragment
+        android:id="@+id/addRoomFragment"
+        android:name="com.example.mobileapplication.AddRoomFragment"
+        android:label="Add Room"
+        tools:layout="@layout/fragment_add_room">
+        <action
+            android:id="@+id/action_addRoomFragment_to_roomListFragment"
+            app:destination="@id/roomListFragment2" />
+        <action
+            android:id="@+id/action_addRoomFragment_to_viewRoomFragment"
+            app:destination="@id/viewRoomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomListFragment2"
+        android:name="com.example.mobileapplication.RoomListFragment"
+        android:label="Room List"
+        tools:layout="@layout/fragment_room_list">
+        <action
+            android:id="@+id/action_roomListFragment2_to_viewRoomFragment"
+            app:destination="@id/viewRoomFragment" />
+        <action
+            android:id="@+id/action_roomListFragment2_to_addRoomFragment"
+            app:destination="@id/addRoomFragment"
+            app:popUpTo="@id/roomListFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewRoomFragment"
+        android:name="com.example.mobileapplication.ViewRoomFragment"
+        android:label="Room Detail"
+        tools:layout="@layout/fragment_view_room" >
+        <argument
+            android:name="currentHotel"
+            app:argType="com.example.mobileapplication.database.HotelRoom" />
+        <action
+            android:id="@+id/action_viewRoomFragment_to_roomListFragment2"
+            app:destination="@id/roomListFragment2"
+            app:popUpTo="@id/viewRoomFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
