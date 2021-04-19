@@ -110,7 +110,7 @@ class RoomDetailFragment : Fragment() {
             Toast.makeText(requireContext(), "Must have at least one child or adult", Toast.LENGTH_LONG).show()
             binding.txtPrice.text = "Must have at least one child or adult"
         }else if(track == false){
-            Toast.makeText(requireContext(), "This room type don't have available room. Please select another room type", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "This room type don't have available room. Please select another room type or add a new room first.", Toast.LENGTH_LONG).show()
         }
 
     }
