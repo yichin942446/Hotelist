@@ -48,7 +48,7 @@
                 android:layout_marginStart="110dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="Check-in" />
+                android:text="Manage guest" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
