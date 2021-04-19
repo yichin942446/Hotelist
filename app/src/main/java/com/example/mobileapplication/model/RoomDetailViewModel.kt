@@ -109,6 +109,7 @@ class RoomDetailViewModel(
             checkIn.roomNo = roomNo.selectedItem.toString()
 
 
+
             update(checkIn)
 
             // Setting this state variable to true will alert the observer and trigger navigation.
