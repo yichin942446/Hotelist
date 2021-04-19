@@ -52,9 +52,17 @@ class RegistrationActivity : AppCompatActivity() {
             return
         }
 
+        if(!userPassword.text.toString().equals(confirmPwd.text.toString())){
+            confirmPwd.error = "password not correct"
+            confirmPwd.requestFocus()
+            return
+        }
+
         auth.createUserWithEmailAndPassword(userEmail.text.toString(), userPassword.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    Toast.makeText(baseContext, "Sign up successfully.",
+                            Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, SignInActivity2::class.java))
                     finish()
                 } else {

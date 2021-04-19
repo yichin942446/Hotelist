@@ -70,7 +70,7 @@ class PaymentFragment : Fragment() {
 
     fun deleteCheckIn(){
 
-        var pattern = Regex("[0-9]{3,4}")
+        val pattern = Regex("[0-9]{3,4}")
 
         if (binding.txtCardNo.text.toString().isEmpty()) {
             binding.txtCardNo.error = "Please enter card number"

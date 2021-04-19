@@ -2,6 +2,7 @@ package com.example.mobileapplication
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Patterns
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -74,6 +75,40 @@ class UpdateFragment : Fragment() {
     }
 
         private fun updateItem(){
+
+            val pattern = Regex("^01[0-9]{8}$")
+
+            if (binding.updateGuestName.text.toString().isEmpty()) {
+                binding.updateGuestName.error = "Please enter guest name"
+                binding.updateGuestName.requestFocus()
+                return
+            }
+
+            if (binding.updateGuestContact.text.toString().isEmpty()) {
+                binding.updateGuestContact.error = "Please enter guest contact"
+                binding.updateGuestContact.requestFocus()
+                return
+            }
+
+            if (binding.updateGuestEmail.text.toString().isEmpty()) {
+                binding.updateGuestEmail.error = "Please enter email"
+                binding.updateGuestEmail.requestFocus()
+                return
+            }
+
+            if (!pattern.containsMatchIn(binding.updateGuestContact.text.toString())) {
+                binding.updateGuestContact.error = "Please follow format : 01xxxxxxxx"
+                binding.updateGuestContact.requestFocus()
+                return
+            }
+
+            if (!Patterns.EMAIL_ADDRESS.matcher(binding.updateGuestEmail.text.toString()).matches()) {
+                binding.updateGuestEmail.error = "Please enter valid email"
+                binding.updateGuestEmail.requestFocus()
+                return
+            }
+
+
             val name = updateGuestName.text.toString()
             val contact = updateGuestContact.text.toString()
             val email = updateGuestEmail.text.toString()
