@@ -66,7 +66,7 @@ class SignInActivity2 : AppCompatActivity() {
         if(currentUser != null){
             startActivity(Intent(this, HomeActivity::class.java))
         }else{
-            Toast.makeText(baseContext, "Log in failed.",
+            Toast.makeText(baseContext, "Email or password incorrect. Please try again.",
                 Toast.LENGTH_SHORT).show()
         }
     }

@@ -31,34 +31,39 @@
             android:id="@+id/subTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="16dp"
-            android:textSize="28sp"
-            android:textColor="@android:color/holo_green_dark"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/radioGroup"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <RadioGroup
-            android:id="@+id/radioGroup"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:checkedButton="@+id/radio_button_1"
-            android:orientation="vertical"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            app:cardCornerRadius="14dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/subTotal">
+            app:layout_constraintStart_toStartOf="@id/subTotal"
+            app:layout_constraintTop_toBottomOf="@id/subTotal">
 
-
-
-            <com.google.android.material.card.MaterialCardView
+            <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="50dp"
-                app:cardCornerRadius="14dp">
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:checkedButton="@+id/radio_button_1"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/subTotal">
+
 
                 <RadioButton
                     android:id="@+id/masterCard"
@@ -71,15 +76,6 @@
                     android:textSize="20sp" />
 
 
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="50dp"
-                app:cardCornerRadius="14dp">
-
                 <RadioButton
                     android:id="@+id/visaCard"
                     android:layout_width="300dp"
@@ -90,20 +86,21 @@
                     android:text="Visa card"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </com.google.android.material.card.MaterialCardView>
-        </RadioGroup>
+                    app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+            </RadioGroup>
+        </com.google.android.material.card.MaterialCardView>
 
         <View
             android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="55dp"
             android:background="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <TextView
             android:id="@+id/textView9"
@@ -216,7 +213,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="40dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="40dp"
             android:background="@drawable/home_backgroud"
             android:text="Cancel"
             app:layout_constraintBottom_toBottomOf="parent"
