@@ -30,11 +30,14 @@ import kotlinx.android.synthetic.main.fragment_room_detail.room_type
 class RoomDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentRoomDetailBinding
+    private var track: Boolean = false
+
     var totalPrice = 0
 
     private val sharedViewModel: CheckInViewModel by activityViewModels()
     private lateinit var roomDetailViewModel: RoomDetailViewModel
     private var roomNoItems: List<String> = listOf("Hi")
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -92,18 +95,22 @@ class RoomDetailFragment : Fragment() {
 
         if(binding.txtAdultSlider.text.toString() != "Drag the slide bar") {
             adultCount = binding.txtAdultSlider.text.toString().toInt()
+        }
 
-        }else if(binding.txtChildSlider.text.toString() != "Drag the slide bar"){
+        if(binding.txtChildSlider.text.toString() != "Drag the slide bar"){
             childCount = binding.txtChildSlider.text.toString().toInt()
         }
 
+
         val totalCount = adultCount + childCount
 
-        if (totalCount > 0) {
+        if (totalCount > 0 && track) {
             roomDetailViewModel.onSetRoomDetail(binding.txtAdultSlider, binding.txtChildSlider, binding.roomType, binding.roomNo)
         } else if(totalCount == 0) {
             Toast.makeText(requireContext(), "Must have at least one child or adult", Toast.LENGTH_LONG).show()
             binding.txtPrice.text = "Must have at least one child or adult"
+        }else if(track == false){
+            Toast.makeText(requireContext(), "This room type don't have available room. Please select another room type", Toast.LENGTH_LONG).show()
         }
 
     }
@@ -234,6 +241,12 @@ class RoomDetailFragment : Fragment() {
 
     private  fun setRoomNo(){
         roomNoItems = roomDetailViewModel.getHotelRooms(binding.roomType.selectedItem.toString())
+        if (roomNoItems.isNullOrEmpty()) {
+
+            track = false
+            selectRoomNo()
+        }
+
     }
 
     private fun selectRoomType() {
@@ -267,14 +280,23 @@ class RoomDetailFragment : Fragment() {
 
         binding.roomNo.adapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, roomNoItems)
 
+
         binding.roomNo.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long
             ) {
                 //binding.txtRoomType.text = items.get(position)
+
+
+                    track = true
+
+
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 //binding.txtRoomType.text = "Please select an option"
+
+                    track = false
+
 
             }
         }
