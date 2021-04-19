@@ -161,7 +161,7 @@ class CheckInViewModel(
                 _navigateToRoomDetail.value = checkIn
             }else if(fragment.validate < 0 ){
 
-                fragment.noOfNight.text = "Check in date not valid."
+                fragment.noOfNight.text = "Check in date cannot before current date."
             }
             else{
                 fragment.noOfNight.text = "Check out date cannot same \nor before check in date."

@@ -60,7 +60,7 @@
             android:background="#FFFFFF"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:inputType="textShortMessage"
+            android:inputType="textShortMessage|phone"
             android:paddingTop="24dp" />
 
     </com.google.android.material.textfield.TextInputLayout>

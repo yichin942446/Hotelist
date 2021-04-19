@@ -69,6 +69,9 @@ class GuestDetailFragment : Fragment() {
     }
 
     private fun onSetGuestDetail() {
+
+        val pattern = Regex("^01[0-9]{8}$")
+
         if (binding.guestName.text.toString().isEmpty()) {
             binding.guestName.error = "Please enter guest name"
             binding.guestName.requestFocus()
@@ -86,6 +89,13 @@ class GuestDetailFragment : Fragment() {
             binding.guestEmail.requestFocus()
             return
         }
+
+        if (!pattern.containsMatchIn(binding.guestContact.text.toString())) {
+            binding.guestContact.error = "Please follow format : 01xxxxxxxx"
+            binding.guestContact.requestFocus()
+            return
+        }
+
         if (!Patterns.EMAIL_ADDRESS.matcher(binding.guestEmail.text.toString()).matches()) {
             binding.guestEmail.error = "Please enter valid email"
             binding.guestEmail.requestFocus()
