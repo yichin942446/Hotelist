@@ -1,0 +1,9 @@
+fun main() {
+    val list = listOf("101", "102", "103", "104", "105")
+    
+    val result = list.joinToString(",")
+    print(result)
+    
+    val mList = result.split(",") as ArrayList
+    println(mList[0])
+}

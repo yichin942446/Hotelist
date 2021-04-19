@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/btnclose"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/close_button"
+        android:tint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+        tools:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <TextView
+        android:id="@+id/txtviewtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/courgette"
+        android:lineSpacingExtra="36sp"
+        android:text="@string/reservation"
+        android:textColor="#7100A8"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtname"
+        android:layout_width="382dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:hint="@string/name"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtviewtitle" />
+
+    <EditText
+        android:id="@+id/txtcontact"
+        android:layout_width="382dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:hint="@string/contact_number"
+        android:importantForAutofill="no"
+        android:inputType="phone"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtname" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btndatein"
+        android:layout_width="185dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/round_button"
+        android:gravity="bottom|center"
+        android:padding="15dp"
+        android:paddingBottom="18dp"
+        android:text="@string/btndatein"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#A2A2A2"
+        app:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtcontact"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btndateout"
+        android:layout_width="185dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/round_button"
+        android:gravity="bottom|center"
+        android:padding="15dp"
+        android:paddingBottom="18dp"
+        android:text="@string/btndateout"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#A2A2A2"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btndatein"
+        app:layout_constraintTop_toBottomOf="@+id/txtcontact"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtroom"
+        android:layout_width="124dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/room_button"
+        android:gravity="bottom|center"
+        android:paddingBottom="5dp"
+        android:text="@string/rooms"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btndatein" />
+
+    <TextView
+        android:id="@+id/txtadult"
+        android:layout_width="124dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/room_button"
+        android:gravity="bottom|center"
+        android:paddingBottom="5dp"
+        android:text="@string/adults"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/txtroom"
+        app:layout_constraintTop_toBottomOf="@+id/btndatein" />
+
+    <TextView
+        android:id="@+id/txtchildren"
+        android:layout_width="124dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/room_button"
+        android:gravity="bottom|center"
+        android:paddingBottom="5dp"
+        android:text="@string/child"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/txtadult"
+        app:layout_constraintTop_toBottomOf="@+id/btndatein" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnsearch"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round_button"
+        android:text="@string/search"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        app:backgroundTint="#3E9FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtadult" />
+
+    <TextView
+        android:id="@+id/txtyearin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="@string/txtdayin"
+        android:textColor="#0044FF"
+        android:textSize="20sp"
+        android:translationZ="100dip"
+        app:layout_constraintBottom_toBottomOf="@+id/btndatein"
+        app:layout_constraintEnd_toEndOf="@+id/btndatein"
+        app:layout_constraintStart_toStartOf="@+id/btndatein" />
+
+    <TextView
+        android:id="@+id/txtmonthin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtmonthin"
+        android:textColor="#0044FF"
+        android:textSize="20sp"
+        android:translationZ="100dip"
+        app:layout_constraintBottom_toTopOf="@+id/txtyearin"
+        app:layout_constraintEnd_toEndOf="@+id/btndatein"
+        app:layout_constraintStart_toStartOf="@+id/btndatein"
+        app:layout_constraintTop_toBottomOf="@+id/txtdatein" />
+
+    <TextView
+        android:id="@+id/txtdatein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/txtdatein"
+        android:textColor="#0044FF"
+        android:textSize="40sp"
+        android:translationZ="100dip"
+        app:layout_constraintEnd_toEndOf="@+id/btndatein"
+        app:layout_constraintStart_toStartOf="@+id/btndatein"
+        app:layout_constraintTop_toTopOf="@+id/btndatein" />
+
+    <TextView
+        android:id="@+id/txtyearout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="@string/txtdayout"
+        android:textColor="#0044FF"
+        android:textSize="20sp"
+        android:translationZ="100dip"
+        app:layout_constraintBottom_toBottomOf="@+id/btndateout"
+        app:layout_constraintEnd_toEndOf="@+id/btndateout"
+        app:layout_constraintStart_toStartOf="@+id/btndateout" />
+
+    <TextView
+        android:id="@+id/txtmonthout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtmonthout"
+        android:textColor="#0044FF"
+        android:textSize="20sp"
+        android:translationZ="100dip"
+        app:layout_constraintBottom_toTopOf="@+id/txtyearout"
+        app:layout_constraintEnd_toEndOf="@+id/btndateout"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/btndateout"
+        app:layout_constraintTop_toBottomOf="@+id/txtdateout" />
+
+    <TextView
+        android:id="@+id/txtdateout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:text="@string/txtdateout"
+        android:textColor="#0044FF"
+        android:textSize="40sp"
+        android:translationZ="100dip"
+        app:layout_constraintEnd_toEndOf="@+id/btndateout"
+        app:layout_constraintStart_toStartOf="@+id/btndateout"
+        app:layout_constraintTop_toTopOf="@+id/btndateout" />
+
+    <EditText
+        android:id="@+id/txtRoom"
+        android:layout_width="124dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="1dp"
+        android:background="#00FFFFFF"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="1"
+        android:textAlignment="center"
+        android:textColor="#0077FF"
+        android:translationZ="100dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtroom"
+        app:layout_constraintStart_toStartOf="@+id/txtroom"
+        app:layout_constraintTop_toTopOf="@+id/txtroom" />
+
+    <EditText
+        android:id="@+id/txtAdult"
+        android:layout_width="124dp"
+        android:layout_height="30dp"
+        android:background="#00FFFFFF"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="1"
+        android:textAlignment="center"
+        android:textColor="#0077FF"
+        android:translationZ="100dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtadult"
+        app:layout_constraintStart_toEndOf="@+id/txtroom"
+        app:layout_constraintTop_toTopOf="@+id/txtadult" />
+
+    <EditText
+        android:id="@+id/txtChildren"
+        android:layout_width="124dp"
+        android:layout_height="30dp"
+        android:background="#00FFFFFF"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="#0077FF"
+        android:translationZ="100dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtchildren"
+        app:layout_constraintStart_toStartOf="@+id/txtchildren"
+        app:layout_constraintTop_toTopOf="@+id/txtchildren" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReservationList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Reservation List"
+        android:textColor="#7100A8"
+        app:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnsearch" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
