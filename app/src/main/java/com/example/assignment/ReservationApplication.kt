@@ -5,4 +5,7 @@ import com.example.assignment.database.reservationRepository
 class WordsApplication : Application() {
     val database by lazy { reservationDatabase.getDatabase(this) }
     val repository by lazy { reservationRepository(database.reservationDao()) }
+
+
+    //testing new changes
 }
