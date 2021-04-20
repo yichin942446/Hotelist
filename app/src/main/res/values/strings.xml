@@ -1,8 +1,6 @@
 <resources>
-    <string name="app_name">Mobile Application</string>
     <string name="good">good</string>
     <string name="content_description_end_icon">How are you</string>
-    <string name="name">Name</string>
     <string name="contact">contact</string>
     <string name="email">email</string>
     <string name="button">Next</string>
@@ -27,5 +25,25 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="Registration" />
+
+    <!--OYC-->
+    <string name="app_name">Assignment</string>
+    <string name="close_button">Close Button</string>
+    <string name="reservation">Reservation</string>
+    <string name="name">Name</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="btndatein">Check-In Date</string>
+    <string name="btndateout">Check-Out Date</string>
+    <string name="rooms">Rooms</string>
+    <string name="adults">Adults</string>
+    <string name="child">Children</string>
+    <string name="search">SEARCH</string>
+    <string name="txtdatein">Date</string>
+    <string name="txtdateout">Date</string>
+    <string name="txtdayin">Year</string>
+    <string name="txtdayout">Year</string>
+    <string name="txtmonthin">Month</string>
+    <string name="txtmonthout">Month</string>
+
 
 </resources>
